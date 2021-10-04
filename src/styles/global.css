@@ -13,7 +13,10 @@ html, body {
 body {
   background: radial-gradient(at top left, rgba(146,43,225,1) 0%, rgba(43,9,107,1) 100%);
   background-repeat: no-repeat;
+  padding: 0 32px;
 }
+
+
 p {
   margin: 16px auto;
   line-height: 1.5em;
@@ -23,6 +26,7 @@ p {
 .layout {
   max-width: 1200px;
   margin: 0 auto;
+  min-height: 100%;
 }
 nav {
   display: grid;
@@ -35,12 +39,13 @@ nav .links {
 }
 nav a {
   display: inline-block;
-  margin-left: 20px;
+  margin: 0 0 20px 20px;
   font-weight: 400;
   padding-bottom: 8px;
   border-bottom: 3px solid transparent;
 }
-nav a:hover {
+nav a:hover,
+nav a.active {
   border-color: white;
 }
 footer p{

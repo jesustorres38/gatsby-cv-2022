@@ -27,9 +27,9 @@ module.exports = {
     },
   ],
   siteMetadata: {
-    title: 'Web Warrior 2',
-    description: 'personal page',
-    copyright: 'This website is copyright 2021',
+    title: 'Jesus Torres',
+    description: 'Personal page of Jesus Torres.',
+    copyright: 'Jesus Torres',
     contact: 'email@example.com',
   }
 }
