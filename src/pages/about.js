@@ -20,6 +20,8 @@ export default function About() {
           <li>Webpack</li>
           <li>VWO (For testing)</li>
           <li>Gatsby (JAMSTACK)</li>
+          <li>Firebase</li>
+          <li>Netlify</li>
           <li>... and more things I don't remember &#128513;</li>
         </ul>
       </div>

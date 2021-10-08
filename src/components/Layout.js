@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
+import React, { Fragment } from 'react'
 import Navbar from './Navbar'
 import '../styles/global.css'
 
@@ -19,14 +19,16 @@ export default function Layout({children}) {
   const year = new Date().getFullYear();
 
   return (
-    <div className="layout">
-      <Navbar />
-      <div className="content">
-        {children}
+    <Fragment>
+      <div className="layout">
+        <Navbar />
+        <div className="content">
+          {children}
+        </div>
       </div>
       <footer>
         <p>&copy; {year} {copyright}</p>
       </footer>
-    </div>
+    </Fragment>
   )
 }

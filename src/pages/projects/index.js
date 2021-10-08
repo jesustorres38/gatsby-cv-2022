@@ -14,7 +14,7 @@ export default function Projects({data}) {
     <Layout>
       <div className={styles.portfolio}>
         <h2>Portfolio</h2>
-        <h3>Projects & Websites I've Created</h3>
+        <h3>Projects & Websites I've Worked</h3>
         <div className={styles.projects}>
           {projects.map((project) => {
             const image = getImage(project.node.frontmatter.thumb)
@@ -36,28 +36,28 @@ export default function Projects({data}) {
 
 // export page query
 export const query = graphql`
-query ProjectsPage {
-  projects: allMarkdownRemark(sort: {fields: frontmatter___date, order: ASC}) {
-    edges {
-      node {
-        frontmatter {
-          slug
-          stack
-          title
-          thumb {
-            childImageSharp {
-              gatsbyImageData
+  query ProjectsPage {
+    projects: allMarkdownRemark(sort: {order: DESC, fields: frontmatter___date}) {
+      edges {
+        node {
+          frontmatter {
+            slug
+            stack
+            title
+            thumb {
+              childImageSharp {
+                gatsbyImageData
+              }
             }
           }
+          id
         }
-        id
+      }
+    }
+    contact: site {
+      siteMetadata {
+        contact
       }
     }
   }
-  contact: site {
-    siteMetadata {
-      contact
-    }
-  }
-}
 `
