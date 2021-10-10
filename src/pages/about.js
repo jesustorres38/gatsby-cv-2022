@@ -1,11 +1,10 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import * as styles from '../styles/about.module.css'
 
 export default function About() {
   return (
     <Layout>
-      <div className={styles.about}>
+      <div>
         <h1>Web Developer</h1>
         <p>After graduating in <strong>Computer Engineering</strong> I moved to Barcelona where I have worked on projects as a freelancer and in <strong>small and large companies</strong> with teams of up to 30 people.</p>
         <p>A normal day consists of organizing myself with my team based on an <strong>agile development methodology</strong>, developing reusable components, developing <strong>end-to-end tests</strong>, automating tasks, documenting, taking care of performance based on Google's <strong>Web Vitals</strong>, doing code review, having always in mind the principles <strong>SOLID, DRY and KISS</strong> and of course having fun with my colleagues.</p>

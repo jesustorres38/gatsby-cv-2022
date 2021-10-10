@@ -11,7 +11,7 @@ html, body {
   min-height: 100%;
 }
 body {
-  background: radial-gradient(at top left, rgba(146,43,225,1) 0%, rgba(43,9,107,1) 100%);
+  background: radial-gradient(at top left, #000428, #004e92);
   background-repeat: no-repeat;
 }
 p {
@@ -43,6 +43,9 @@ nav a {
 nav a:hover,
 nav a.active {
   border-color: white;
+}
+ul {
+  margin-left: 32px;
 }
 footer {
   height: 80px;
