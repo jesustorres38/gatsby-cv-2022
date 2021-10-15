@@ -8,7 +8,7 @@ const Projects = ({data}) => {
   console.log(data)
 
   const projects = data.projects.edges
-  const contact = data.contact.siteMetadata.contact
+  // const contact = data.contact.siteMetadata.contact
 
   return (
     <Layout>
@@ -28,7 +28,7 @@ const Projects = ({data}) => {
             </Link>
           })}
         </div>
-        <p>Like what you see? email me at { contact } for a quote!</p>
+        <p>Like what you see? <a className="externalLink" href="https://www.linkedin.com/in/jesustorres38/">contact me</a> for a quote!</p>
       </PortfolioWrapper>
     </Layout>
   )
@@ -46,6 +46,11 @@ const PortfolioWrapper = styled.div`
   h3 {
     font-size: 2em;
     font-weight: 400;
+  }
+  .externalLink {
+    color: #0a66c2;
+    text-decoration: underline;
+    font-style: italic;
   }
   .projects {
     display: grid;
