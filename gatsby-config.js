@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  pathPrefix: '/jesustorres38.github.io',
   /* Your site config here */
   plugins: [
     `gatsby-plugin-image`,
