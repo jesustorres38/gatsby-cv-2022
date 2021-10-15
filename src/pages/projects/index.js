@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '../../components/Layout'
-import * as styles from '../../styles/projects.module.css'
 import { graphql, Link } from 'gatsby'
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import styled from 'styled-components'
 
-export default function Projects({data}) {
+const Projects = ({data}) => {
   console.log(data)
 
   const projects = data.projects.edges
@@ -12,10 +12,10 @@ export default function Projects({data}) {
 
   return (
     <Layout>
-      <div className={styles.portfolio}>
+      <PortfolioWrapper>
         <h2>Portfolio</h2>
         <h3>Projects & Websites I've Worked</h3>
-        <div className={styles.projects}>
+        <div className="projects">
           {projects.map((project) => {
             const image = getImage(project.node.frontmatter.thumb)
 
@@ -29,10 +29,56 @@ export default function Projects({data}) {
           })}
         </div>
         <p>Like what you see? email me at { contact } for a quote!</p>
-      </div>
+      </PortfolioWrapper>
     </Layout>
   )
 }
+
+const PortfolioWrapper = styled.div`
+  
+  text-align: center;
+  
+  h2 {
+    font-size: 3em;
+    margin-top: 80px;
+  }
+
+  h3 {
+    font-size: 2em;
+    font-weight: 400;
+  }
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 80px;
+    margin: 80px 20px;
+  }
+  .projects h3 {
+    text-align: center;
+    margin: 20px auto 0px;
+    font-weight: 500;
+  }
+  .projects p {
+    color: #ccc;
+    margin-top: 4px;
+  }
+
+  @media only screen and (min-width: 500px) {
+
+    .projects {
+      grid-template-columns: 1fr 1fr;
+    }
+
+  }
+
+  @media only screen and (min-width: 760px) {
+
+    .projects {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+  }
+`
 
 // export page query
 export const query = graphql`
@@ -61,3 +107,5 @@ export const query = graphql`
     }
   }
 `
+
+export default Projects

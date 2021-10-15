@@ -25,6 +25,12 @@ module.exports = {
         path: `${__dirname}/src/projects/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
   ],
   siteMetadata: {
     title: 'Jesus Torres',

@@ -1,10 +1,10 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
-import * as styles from '../styles/project-details.module.css'
+import styled from 'styled-components'
 import { graphql } from 'gatsby'
 
-export default function ProjectDetails({data}) {
+const ProjectDetails = ({data}) => {
   console.log(data)
   const {html} = data.markdownRemark
   const {title, stack, featuredImg} = data.markdownRemark.frontmatter
@@ -12,17 +12,39 @@ export default function ProjectDetails({data}) {
 
   return (
     <Layout>
-      <div className={styles.details}>
+      <Details>
         <h2>{title}</h2>
         <h3>{stack}</h3>
-        <div className={styles.featured}>
+        <div className="featured">
           <GatsbyImage image={image} alt="no se que poner" />
         </div>
-        <div className={styles.html} dangerouslySetInnerHTML={{__html: html}} />
-      </div>
+        <div className="html" dangerouslySetInnerHTML={{__html: html}} />
+      </Details>
     </Layout>
   )
 }
+
+const Details = styled.div`
+
+  h2 {
+    font-size: 3.5em;
+    margin-top: 80px;
+  }
+  h3 {
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 40px;
+  }
+  a {
+    text-decoration: underline;
+  }
+  .html {
+    margin-top: 40px;
+  }
+  .featured {
+    margin-bottom: 40px;
+  }
+`
 
 export const query = graphql`
   query ProjectDetails($slug: String) {
@@ -41,3 +63,4 @@ export const query = graphql`
   }
 `
 
+export default ProjectDetails

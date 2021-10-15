@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 
-export default function About() {
+const About = () => {
   return (
     <Layout>
       <div>
@@ -27,3 +27,5 @@ export default function About() {
     </Layout>
   )
 }
+
+export default About

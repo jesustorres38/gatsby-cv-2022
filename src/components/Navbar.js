@@ -1,7 +1,7 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 
-export default function Navbar() {
+const Navbar = () => {
 
   const data = useStaticQuery(graphql`
     {
@@ -27,3 +27,4 @@ export default function Navbar() {
   )
 }
 
+export default Navbar
