@@ -21,6 +21,8 @@ const About = () => {
           <li>Gatsby (JAMSTACK)</li>
           <li>Firebase</li>
           <li>Netlify</li>
+          <li>Microservices</li>
+          <li>Vite</li>
           <li>... and more things I don't remember &#128513;</li>
         </ul>
       </div>
